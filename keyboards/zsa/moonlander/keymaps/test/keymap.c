@@ -34,6 +34,13 @@
 #define LCL MOD_LCTL
 #define RCL MOD_RCTL
 
+#define MOUSE_L KC_MS_LEFT
+#define MOUSE_R KC_MS_RIGHT
+#define MOUSE_U KC_MS_UP
+#define MOUSE_D KC_MS_DOWN
+#define MOUSE_B1 KC_MS_BTN1
+#define MOUSE_B2 KC_MS_BTN2
+
 enum layers {
     BASE,
     NUMB,
@@ -67,12 +74,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [SYMB] = LAYOUT(
-    _______, _______, _______, _______, _______, _______, _______,                                 _______, _______, _______, KC_SLASH,       _______, _______, _______,
-    _______, KC_EXLM,        KC_AT,          KC_LCBR,        KC_RCBR,        KC_PIPE,        KC_HASH,                                        KC_NO,          KC_NO,          _______, _______, _______, KC_ASTR,        _______,
-    TO(0),          KC_PERC,        KC_AMPR,        KC_LPRN,        KC_RPRN,        KC_GRAVE,       _______,                                                                 _______, _______, OSM(RCL),  OSM(RST),  OSM(RAT),  OSM(RWN),  KC_KP_MINUS,
-    _______, KC_DLR,         KC_CIRC,        KC_LBRC,        KC_RBRC,        KC_TILD,                                        KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_UP,       KC_MS_RIGHT,    _______, _______,
-    _______, _______, _______, _______, KC_F,           _______,                                                                                                     _______,     KC_MS_BTN1,     KC_MS_BTN2,     KC_NO,          _______, _______,
-    _______, _______, _______,                 _______, _______, RCTL(KC_BSPC)
+    _______ , _______ , _______ , _______ , _______ , _______ , _______ ,                            _______ , _______ , _______ , KC_SLASH, _______ , _______ , _______ ,
+    _______ , KC_EXLM , KC_AT   , KC_LCBR , KC_RCBR , KC_PIPE , KC_HASH ,                            KC_NO   , KC_NO   , _______ , _______ , _______ , KC_ASTR , _______ ,
+    TO(0)   , KC_PERC , KC_AMPR , KC_LPRN , KC_RPRN , KC_GRAVE, _______ ,                            _______ , _______ ,OSM(RCL),OSM(RST),OSM(RAT),OSM(RWN),KC_KP_MINUS,
+    _______ , KC_DLR  , KC_CIRC , KC_LBRC , KC_RBRC , KC_TILD ,                                                MOUSE_L , MOUSE_D , MOUSE_U , MOUSE_R , _______ , _______ ,
+    _______ , _______ , _______ , _______ , KC_F    ,                     _______ ,         _______ ,                    MOUSE_B1, MOUSE_B2, KC_NO   , _______ , _______ ,
+    _______ , _______ , _______ ,                                                                    _______ , _______ , RCTL(KC_BSPC)
   ),
 
   [MOVE] = LAYOUT(
