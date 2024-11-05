@@ -21,6 +21,19 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
+#define VOL_MUTE KC_AUDIO_MUTE
+#define VOL_DOWN KC_AUDIO_VOL_DOWN
+#define VOL_UP KC_AUDIO_VOL_UP
+
+#define LWN MOD_LGUI
+#define RWN MOD_RGUI
+#define LAT MOD_LALT
+#define RAT MOD_RALT
+#define LST MOD_LSFT
+#define RST MOD_RSFT
+#define LCL MOD_LCTL
+#define RCL MOD_RCTL
+
 enum layers {
     BASE,
     NUMB,
@@ -36,31 +49,32 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
-    _______, _______, _______, KC_QUES, KC_AUDIO_MUTE,  KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,  _______, _______, _______, KC_EXLM,KC_EQUAL, _______,KC_DELETE,
-    _______, KC_TAB , KC_L   , KC_Y   , KC_P   , KC_B   ,KC_GRAVE,                          _______, KC_Z   , KC_F   , KC_O   , KC_U   , _______, _______,
-    KC_ESC , KC_C   , KC_R   , KC_S   , KC_T   , KC_G   , CW_TOGG,                         KC_MINUS, KC_M   , KC_N   , KC_E   , KC_I   , KC_A   , KC_SCLN,
-    KC_Q   , KC_W   , KC_J   , KC_V   , KC_D   , KC_K   ,                                            KC_X   , KC_H   ,KC_QUOTE,KC_COMMA, KC_DOT , _______,
-    _______, _______, _______, _______, KC_UNDS,                   _______,            _______,               KC_ASTR, KC_LABK, KC_RABK, _______, _______,
-    KC_SPACE,OSL(NUMB),KC_BSLS,                                                                  KC_SLASH,OSL(SYMB),KC_BSPC
+    _______ , _______ , _______ , KC_QUES , VOL_MUTE, VOL_DOWN, VOL_UP  ,                            _______ , _______ , _______ , KC_EXLM , KC_EQUAL, _______ ,KC_DELETE,
+    _______ , KC_TAB  , KC_L    , KC_Y    , KC_P    , KC_B    , KC_GRAVE,                            _______ , KC_Z    , KC_F    , KC_O    , KC_U    , _______ , _______ ,
+    KC_ESC  , KC_C    , KC_R    , KC_S    , KC_T    , KC_G    , CW_TOGG ,                            KC_MINUS, KC_M    , KC_N    , KC_E    , KC_I    , KC_A    , KC_SCLN ,
+    KC_Q    , KC_W    , KC_J    , KC_V    , KC_D    , KC_K    ,                                                KC_X    , KC_H    , KC_QUOTE, KC_COMMA, KC_DOT  , _______ ,
+    _______ , _______ , _______ , _______ , KC_UNDS ,                     _______ ,         _______ ,                    KC_ASTR , KC_LABK , KC_RABK , _______ , _______ ,
+    KC_SPACE,OSL(NUMB),KC_BSLS  ,                                                                    KC_SLASH,OSL(SYMB), KC_BSPC
   ),
 
   [NUMB] = LAYOUT(
-    _______, _______, _______, _______, _______, _______, _______,                                 _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______,OSL(ARRO),         _______, _______, _______,                                 _______, _______, KC_7,           KC_8,           KC_9,           _______, _______,
-    TO(0),          OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LSFT),  OSM(MOD_LCTL),  _______, _______,                                                                 _______, _______, KC_4,           KC_5,           KC_6,           KC_PLUS,        _______,
-    _______, _______, _______, _______, _______, _______,                                 _______, KC_1,           KC_2,           KC_3,           _______, _______,
-    _______, _______, _______, _______, _______, _______,                                                                                                 _______, KC_0,           _______, _______, _______, _______,
-    _______, KC_NO,          _______,                 _______, _______, KC_ENTER
+    _______ , _______ , _______ , _______ , _______ , _______ , _______ ,                            _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
+    _______ , _______ , _______ ,OSL(ARRO), _______ , _______ , _______ ,                            _______ , _______ , KC_7    , KC_8    , KC_9    , _______ , _______ ,
+    TO(BASE),OSM(LWN),OSM(LAT),OSM(LST),OSM(LCL), _______ , _______ ,                            _______ , _______ , KC_4    , KC_5    , KC_6    , KC_PLUS , _______ ,
+    _______ , _______ , _______ , _______ , _______ , _______ ,                                                _______ , KC_1    , KC_2    , KC_3    , _______ , _______ ,
+    _______ , _______ , _______ , _______ , _______ ,                     _______ ,         _______ ,                    KC_0    , _______ , _______ , _______ , _______ ,
+    _______ , KC_NO   , _______ ,                                                                    _______ , _______ , KC_ENTER
   ),
 
   [SYMB] = LAYOUT(
     _______, _______, _______, _______, _______, _______, _______,                                 _______, _______, _______, KC_SLASH,       _______, _______, _______,
     _______, KC_EXLM,        KC_AT,          KC_LCBR,        KC_RCBR,        KC_PIPE,        KC_HASH,                                        KC_NO,          KC_NO,          _______, _______, _______, KC_ASTR,        _______,
-    TO(0),          KC_PERC,        KC_AMPR,        KC_LPRN,        KC_RPRN,        KC_GRAVE,       _______,                                                                 _______, _______, OSM(MOD_RCTL),  OSM(MOD_RSFT),  OSM(MOD_RALT),  OSM(MOD_RGUI),  KC_KP_MINUS,
+    TO(0),          KC_PERC,        KC_AMPR,        KC_LPRN,        KC_RPRN,        KC_GRAVE,       _______,                                                                 _______, _______, OSM(RCL),  OSM(RST),  OSM(RAT),  OSM(RWN),  KC_KP_MINUS,
     _______, KC_DLR,         KC_CIRC,        KC_LBRC,        KC_RBRC,        KC_TILD,                                        KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_UP,       KC_MS_RIGHT,    _______, _______,
     _______, _______, _______, _______, KC_F,           _______,                                                                                                     _______,     KC_MS_BTN1,     KC_MS_BTN2,     KC_NO,          _______, _______,
     _______, _______, _______,                 _______, _______, RCTL(KC_BSPC)
   ),
+
   [MOVE] = LAYOUT(
     _______, _______, _______, _______, _______, _______, _______,                                 _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______,LALT(KC_KP_8),  _______, _______, _______,                                 _______, _______, _______, _______, _______, _______, _______,
