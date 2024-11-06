@@ -53,27 +53,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
     _______ , _______ , _______ , _______ , _______ , _______ , _______ ,                            _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
     _______ , KC_ESC  , KC_L    , KC_Y    , KC_P    , KC_B    , _______ ,                            _______ , KC_Z    , KC_F    , KC_O    , KC_U    , _______ , _______ ,
-    _______ , KC_C    , KC_R    , KC_S    , KC_T    , KC_G    , _______ ,                            KC_MINUS, KC_M    , KC_N    , KC_E    , KC_I    , KC_A    , _______ ,
+    _______ , KC_C    , KC_R    , KC_S    , KC_T    , KC_G    , _______ ,                            _______ , KC_M    , KC_N    , KC_E    , KC_I    , KC_A    , _______ ,
     _______ , KC_W    , KC_J    , KC_V    , KC_D    , KC_K    ,                                                KC_X    , KC_H    , KC_QUOTE, KC_COMMA, KC_DOT  , _______ ,
     _______ , _______ , _______ , _______ , KC_UNDS ,                     _______ ,         _______ ,                    KC_ASTR , _______ , _______ , _______ , _______ ,
-                                                      KC_SPACE,OSL(NUMB),KC_BSLS  ,         KC_SLASH,OSL(SYMB), KC_BSPC
+                                                      KC_SPACE,OSL(NUMB), _______ ,         _______ ,OSL(SYMB), KC_BSPC
   ),
 
   [NUMB] = LAYOUT(
     _______ , _______ , _______ , _______ , _______ , _______ , _______ ,                            _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
     _______ , TO(BASE), _______ ,OSL(ARRO), _______ , _______ , _______ ,                            _______ , _______ , KC_7    , KC_8    , KC_9    , _______ , _______ ,
     _______ , OSM(LWN), OSM(LAT), OSM(LST), OSM(LCL), _______ , _______ ,                            _______ , KC_MINUS, KC_4    , KC_5    , KC_6    , _______ , _______ ,
-    _______ , _______ , VOL_MUTE, VOL_DOWN, VOL_UP  , _______ ,                                                KW_PLUS , KC_1    , KC_2    , KC_3    , KC_DOT  , _______ ,
+    _______ , _______ , VOL_MUTE, VOL_DOWN, VOL_UP  , _______ ,                                                KC_PLUS , KC_1    , KC_2    , KC_3    , KC_DOT  , _______ ,
     _______ , _______ , _______ , _______ , _______ ,                     _______ ,         _______ ,                    KC_0    , _______ , _______ , _______ , _______ ,
                                                       _______ , KC_NO   , _______ ,         _______ , _______ ,KC_ENTER
   ),
 
   [SYMB] = LAYOUT(
     _______ , _______ , _______ , _______ , _______ , _______ , _______ ,                            _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
-    _______ , TO(BASE), KC_AT   , KC_LCBR , KC_RCBR , KC_PIPE , _______ ,                            KC_NO   , KC_NO   , KC_DLR  , KC_EXLM , KC_EQUAL, KC_ASTR , _______ ,
+    _______ , TO(BASE), KC_AT   , KC_LCBR , KC_RCBR , KC_BSLS , _______ ,                            KC_NO   , KC_NO   , KC_DLR  , KC_EXLM , KC_EQUAL, KC_ASTR , _______ ,
     _______ , KC_PERC , KC_AMPR , KC_LPRN , KC_RPRN , KC_GRAVE, _______ ,                            _______ , _______ ,OSM(RCL),  OSM(RST), OSM(RAT), OSM(RWN), _______ ,
     _______ , KC_Q    , KC_CIRC , KC_LBRC , KC_RBRC , KC_TILD ,                                                _______ , KC_GRAVE, CW_TOGG , KC_SCLN , KC_SCLN , _______ ,
-    _______ , _______ , _______ , _______ , _______ ,                     _______ ,         _______ ,                   KC_DELETE, _______ , _______ , _______ , _______ ,
+    _______ , _______ , _______ , _______ , KC_SLASH,                     _______ ,         _______ ,                   KC_DELETE, _______ , _______ , _______ , _______ ,
                                                       KC_TAB  , _______ , _______ ,         _______ , _______ , _______
   ),
 
