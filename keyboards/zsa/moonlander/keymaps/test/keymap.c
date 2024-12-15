@@ -71,8 +71,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYMB] = LAYOUT(
     _______ , _______ , _______ , _______ , _______ , _______ , _______ ,                            _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
     _______ , TO(BASE), KC_AT   , KC_LCBR , KC_RCBR , KC_BSLS , _______ ,                            KC_NO   , KC_NO   , KC_DLR  , KC_EXLM , KC_EQUAL, KC_ASTR , _______ ,
-    _______ , KC_PERC , KC_AMPR , KC_LPRN , KC_RPRN , KC_GRAVE, _______ ,                            _______ , _______ ,OSM(RCL),  OSM(RST), OSM(RAT), OSM(RWN), _______ ,
-    _______ , KC_Q    , KC_CIRC , KC_LBRC , KC_RBRC , KC_TILD ,                                                _______ , KC_GRAVE, CW_TOGG , KC_SCLN , KC_SCLN , _______ ,
+    _______ , KC_PERC , KC_AMPR , KC_LPRN , KC_RPRN , KC_GRAVE, _______ ,                            _______ , KC_HASH ,OSM(RCL),  OSM(RST), OSM(RAT), OSM(RWN), _______ ,
+    _______ , KC_Q    , KC_CIRC , KC_LBRC , KC_RBRC , KC_TILD ,                                                _______ , KC_GRAVE, CW_TOGG , KC_SCLN ,S(KC_SCLN),_______ ,
     _______ , _______ , _______ , _______ , KC_SLASH,                     _______ ,         _______ ,                   KC_DELETE, _______ , _______ , _______ , _______ ,
                                                       KC_TAB  , _______ , _______ ,         _______ , _______ , _______
   ),
